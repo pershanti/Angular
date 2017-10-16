@@ -1,0 +1,18 @@
+<h1>Dojo Emails</h1>
+
+<table>
+  <tr>
+    <th>Display Name</th>
+    <th>Email</th>
+    <th>Importance</th>
+    <th>Subject</th>
+    <th>Content</th>
+  </tr>
+  <tr *ngFor = 'let entry of emailList'>
+    <td>{{entry.name}}</td>
+    <td>{{entry.email | lowercase}}</td>
+    <td>{{entry.importance}}</td>
+    <td>{{entry.subject}}</td>
+    <td>{{entry.content}}</td>
+  </tr>
+</table>
