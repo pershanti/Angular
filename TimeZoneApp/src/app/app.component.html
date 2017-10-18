@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    US Time Zone Display
+  </h1>
+
+  <ul>
+    <li (click)="display('PST')" [ngclass] = "{'active': switch, 'square'=true}">PST</li>
+    <li (click)="display('PST')" [ngclass] = "{'active': switch, 'square'=true}">MST</li>
+    <li (click)="display('PST')" [ngclass] = "{'active': switch, 'square'=true}">CST</li>
+    <li (click)="display('PST')" [ngclass] = "{'active': switch, 'square'=true}">EST</li>
+    <li (click)=''>Clear</li>
+  </ul>
+
+  <h3 name = "time_display">{{ time | date:'mediumTime' }}</h3>
+
+
+ 
