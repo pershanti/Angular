@@ -1,0 +1,16 @@
+ul{
+    width: 200px;
+    height:100px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 50px;
+    background-color: lightpink;
+    list-style-type: none;
+
+}
+
+li{
+    display: block;
+    width: 150px;
+}
+
