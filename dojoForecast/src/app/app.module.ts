@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WeatherComponent } from './weather/weather.component';
 import { SeattleComponent } from './seattle/seattle.component';
 import { BurbankComponent } from './burbank/burbank.component';
 import { ChicagoComponent } from './chicago/chicago.component';
@@ -15,7 +14,6 @@ import {GetWeatherService} from './get-weather.service'
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherComponent,
     SeattleComponent,
     BurbankComponent,
     ChicagoComponent,

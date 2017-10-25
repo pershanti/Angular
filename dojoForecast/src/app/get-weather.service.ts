@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http'
 
 @Injectable()
+  
 export class GetWeatherService {
 
   constructor(private _http: Http) { }
@@ -28,12 +29,12 @@ export class GetWeatherService {
       case 'chicago':  city_id = 3582383
     }
 
-    this._http.get("http://api.openweathermap.org/data/2.5/forecast?"+city_id+"&APPID=725e883c6a35a71f47367e8f07263b03").subscribe(
+    this._http.get("http://api.openweathermap.org/data/2.5/forecast?id="+city_id+"&APPID=725e883c6a35a71f47367e8f07263b03").subscribe(
       (response) => {
-        this.data.Humidity = parseFloat(response.json().list[0].main.humidity) - 273.15
-        this.data.Tempavg = parseFloat(response.json().list[0].main.temp) - 273.15
-        this.data.Temphigh = parseFloat(response.json().list[0].main.temp_max) - 273.15
-        this.data.Templow = parseFloat(response.json().list[0].main.temp_min) - 273.15
+        this.data.Humidity =  Math.floor(parseInt(response.json().list[0].main.humidity))
+        this.data.Tempavg = Math.floor(parseInt(response.json().list[0].main.temp)*9/5 - 459.67)
+        this.data.Temphigh = Math.floor(parseInt(response.json().list[0].main.temp_max)*9/5 - 459.67)
+        this.data.Templow = Math.floor(parseInt(response.json().list[0].main.temp_min)*9/5 - 459.67)
         this.data.Status = response.json().list[0].weather[0].description
       },
       (error) => {
